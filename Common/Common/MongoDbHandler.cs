@@ -69,7 +69,10 @@ namespace Common
 
         public IEnumerable<Tag> GetTagsByUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<User>.Filter
+                .Eq(user => user.Id, userId);
+            var projectionDefition = Builders<User>.Projection.Include(user => user.Tags);
+            return UsersCollection.Find(filterDefinition).FirstOrDefault().Tags;
         }
 
         public User GetUser(Guid userId)
