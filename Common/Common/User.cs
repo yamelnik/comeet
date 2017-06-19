@@ -15,8 +15,11 @@ namespace Common
         [BsonElement("lastName")]
         public string LastName;
 
-        [BsonElement("birthDate")]
-        public DateTime BirthDate;
+        [BsonElement("birthTime")]
+        public DateTime BirthTime;
+
+        [BsonElement("dischargeTime")]
+        public DateTime DischargeTime;
 
         [BsonElement("sex")]
         public string Sex;
