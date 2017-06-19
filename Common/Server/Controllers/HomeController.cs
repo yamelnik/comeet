@@ -10,7 +10,6 @@ namespace Server.Controllers
     public class HomeController : Controller
     {
         // GET: Views
-        [EnableCors]
         public ActionResult Index()
         {
             return View(); 
