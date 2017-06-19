@@ -77,7 +77,9 @@ namespace Common
 
         public User GetUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<User>.Filter
+                .Eq(user => user.Id, userId);
+            return UsersCollection.Find(filterDefinition).FirstOrDefault();
         }
 
         public IEnumerable<User> GetUsersByString(string str)
