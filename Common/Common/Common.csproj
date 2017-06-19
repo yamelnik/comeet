@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDbHandler.cs" />
+    <Compile Include="MockDbHandler.cs" />
     <Compile Include="MongoDbHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tag.cs" />

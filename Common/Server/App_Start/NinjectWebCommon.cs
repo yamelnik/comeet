@@ -11,6 +11,9 @@ namespace Server.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Common;
+    using System.Web.Http;
+    using Ninject.Web.WebApi;
+    using Tester;
 
     public static class NinjectWebCommon 
     {
@@ -45,9 +48,10 @@ namespace Server.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IDbHandler>().To<MongoDbHandler>().InSingletonScope();
+                kernel.Bind<IDbHandler>().To<MockDbHandler>().InSingletonScope();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch

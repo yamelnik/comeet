@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Tester
 {
-    class MockDbHandler : IDbHandler
+    public class MockDbHandler : IDbHandler
     {
+        public MockDbHandler()
+        {
+
+        }
         public void AddNewTag(Tag newTag)
         {
 

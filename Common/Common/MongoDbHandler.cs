@@ -9,22 +9,13 @@ namespace Common
         private static readonly string ConnectionString = @"mongodb://teamd9mongodb:pfps2B8gq5UnVPzV1ssVPmjVBqL7WNE0IRNqviBqT9CYcNU640qHyA9WkBZ8SMdJsHNEdW4ZNRkummsefCV2Dw==@teamd9mongodb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
         private readonly IMongoCollection<User> UsersCollection;
         private readonly IMongoCollection<Tag> TagsCollection;
-        private readonly static Lazy<MongoDbHandler> Lazy = new Lazy<MongoDbHandler>(() => new MongoDbHandler());
-
-        private MongoDbHandler()
+        
+        public MongoDbHandler()
         {
             var client = new MongoClient(ConnectionString);
             var db = client.GetDatabase("comeet");
             UsersCollection = db.GetCollection<User>("users");
             TagsCollection = db.GetCollection<Tag>("tags");
-        }
-
-        public static MongoDbHandler Instance
-        {
-            get
-            {
-                return Lazy.Value;
-            }
         }
 
         public void AddNewTag(Tag newTag)

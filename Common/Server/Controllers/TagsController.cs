@@ -11,7 +11,7 @@ namespace Api.Controllers
     public class TagsController : ApiController
     {
         private IDbHandler DbHandler;
-        TagsController(IDbHandler dbHandler)
+        public TagsController(IDbHandler dbHandler)
         {
             DbHandler = dbHandler;
         }
