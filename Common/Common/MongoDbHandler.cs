@@ -10,7 +10,7 @@ namespace Common
         private readonly IMongoCollection<User> UsersCollection;
         private readonly IMongoCollection<Tag> TagsCollection;
 
-        private MongoDbHandler()
+        public MongoDbHandler()
         {
             var client = new MongoClient(ConnectionString);
             var db = client.GetDatabase("comeet");
@@ -51,7 +51,8 @@ namespace Common
 
         public IEnumerable<Tag> GetAllTagsInCategory(string categoryName)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<Tag>.Filter.Eq(tag => tag.Category, categoryName);
+            return TagsCollection.Find(filterDefinition).ToList();
         }
 
         public IEnumerable<User> GetAllUsers()
