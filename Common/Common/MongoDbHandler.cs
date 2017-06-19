@@ -29,7 +29,7 @@ namespace Common
 
         public void AddNewTag(Tag newTag)
         {
-            throw new NotImplementedException();
+            TagsCollection.InsertOne(newTag);
         }
 
         public void AddNewUser(User newUser)
@@ -39,7 +39,18 @@ namespace Common
 
         public void AddTagToUser(Guid userId, Tag newTag)
         {
-            throw new NotImplementedException();
+            var existingTag = GetTag(newTag.Category, newTag.Value);
+            if (existingTag != null)
+            {
+                newTag.Id = existingTag.Id;
+            }
+            else
+            {
+                AddNewTag(newTag);
+            }
+            var filterDefinition = Builders<User>.Filter.Eq(user => user.Id, userId);
+            var updateDefinition = Builders<User>.Update.AddToSet(user => user.Tags, newTag);
+            UsersCollection.UpdateOne(filterDefinition, updateDefinition);
         }
 
         public IEnumerable<Tag> GetAllTags()
@@ -57,9 +68,11 @@ namespace Common
             throw new NotImplementedException();
         }
 
-        public Tag GetTag(string tagText)
+        public Tag GetTag(string category, string value)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<Tag>.Filter
+                .Where(tag => tag.Category == category && tag.Value == value);
+            return TagsCollection.Find(filterDefinition).FirstOrDefault();
         }
 
         public IEnumerable<Tag> GetTagsByUser(Guid userId)

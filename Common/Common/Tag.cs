@@ -6,6 +6,7 @@ namespace Common
     public class Tag
     {
         [BsonId]
+        [BsonRepresentation(MongoDB.Bson.BsonType.String)]
         public Guid Id;
 
         [BsonElement("category")]

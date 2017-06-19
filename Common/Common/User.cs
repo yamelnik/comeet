@@ -7,6 +7,7 @@ namespace Common
     public class User
     {
         [BsonId]
+        [BsonRepresentation(MongoDB.Bson.BsonType.String)]
         public Guid Id;
 
         [BsonElement("firstName")]
