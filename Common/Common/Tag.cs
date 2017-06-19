@@ -9,7 +9,7 @@ namespace Common
         public Guid Id;
 
         [BsonElement("category")]
-        public Guid Category;
+        public string Category;
 
         [BsonElement("value")]
         public string Value;

@@ -24,6 +24,12 @@ namespace Common
         [BsonElement("sex")]
         public string Sex;
 
+        [BsonElement("voipNumber")]
+        public string VoipNumber;
+
+        [BsonElement("phoneNumber")]
+        public string PhoneNumber;
+
         [BsonElement("tags")]
         public List<Tag> Tags;
     }
