@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Server.Controllers
 {
-    public class ViewsController : Controller
+    public class HomeController : Controller
     {
         // GET: Views
         public ActionResult Index()
         {
-            return new View().
+            return View(); 
         }
     }
 }
