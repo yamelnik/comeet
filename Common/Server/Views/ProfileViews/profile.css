@@ -1,7 +1,13 @@
+.row {
+    /*    border: 2px solid red;
+*/ padding-top: 2em;
+}
+
+
 body {
-/*    background: url("https://images.unsplash.com/photo-1493689485253-f07fcbfc731b?dpr=1.5&auto=format&fit=crop&w=1500&h=1024&q=80&cs=tinysrgb&crop=&bg=");
-*/    background-size: cover;
-    background-position: center; 
+    /*    background: url("https://images.unsplash.com/photo-1493689485253-f07fcbfc731b?dpr=1.5&auto=format&fit=crop&w=1500&h=1024&q=80&cs=tinysrgb&crop=&bg=");
+*/ background-size: cover;
+    background-position: center;
     padding-top: 70px;
     background-color: rgba(236, 240, 241, 0.37);
 }
@@ -14,8 +20,8 @@ html {
 }
 
 h1 {
-	font-weight: 700;
-	font-size: 5em;
+    font-weight: 700;
+    font-size: 5em;
 }
 
 .hero {
@@ -39,6 +45,8 @@ h1 {
     justify-content: center;
     background-color: white;
     min-height: 150px;
+    border: 2px solid rgba(192, 192, 192, 0.44);
+    border-top-color: white;
 }
 
 #profile_photo {
@@ -50,56 +58,76 @@ h1 {
     border: 3px solid white;
 }
 
-.TopTitle{
+.TopTitle {
     background-position: center;
     text-align: center;
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
     padding-top: 5em;
 }
 
-.Experience {
-    position: absolute;
-    margin-top: 10%;
-    background-color: rgba(231,231,228,0.5);
-    background-position: center;
-    text-align: left;
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
-    padding-top: 5px; 
-
-}
-}
 hr {
     width: 400px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+
 .navbar-fixed-top {
     background-color: #0077b5;
 }
 
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
-    color: white;   
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+    color: white;
 }
 
- .navbar-default .navbar-toggle .icon-bar{
+.navbar-default .navbar-toggle .icon-bar {
     background-color: white;
- }
-
-/*#profile_photo:hover {
-    width: 65%;
-    height: auto;
-    */
-}
-/*
-.row {
-    border: 1px solid yellow;
 }
 
-.col-lg-2, .col-lg-8 {
-    border: 1px solid red;*/
+.Hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background-color: white;
+    min-height: 150px;
+    border: 2px solid rgba(192, 192, 192, 0.44);
+    background-image: url("C:/Users/tomer/Google Drive/8hack 2017/ver 3.0/EXP.PNG");
+    background-image: url("C:/Users/tomer/Google Drive/8hack 2017/ver 3.0/hobbies.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 150px;
+    /*    position: absolute; 
+*/
 }
 
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background-color: white;
+    min-height: 150px;
+    border: 2px solid rgba(192, 192, 192, 0.44);
+    background-image: url("C:/Users/tomer/Google Drive/8hack 2017/ver 3.0/EXP.PNG");
+    background-image: url("C:/Users/tomer/Google Drive/8hack 2017/ver 3.0/skills.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 150px;
+}
+
+.MyExperience {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background-color: white;
+    min-height: 150px;
+    border: 2px solid rgba(192, 192, 192, 0.44);
+    background-image: url("C:/Users/tomer/Google Drive/8hack 2017/ver 3.0/EXP.PNG");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 150px;
+    margin-bottom: 50px;
+    /*    max-width: 746px;
+*/
+}

@@ -12,7 +12,7 @@ namespace Server.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return new HttpStatusCodeResult(200);
+            return View();
         }
         
     }

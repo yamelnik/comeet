@@ -3,6 +3,6 @@ $(document).ready(function(){
 		url: "http://comeet.azurewebsites.net/Tags"
 	}
 		, function( data ) {
-  			Console.log(data);
+            Console.log(data);
 	});
 });	
