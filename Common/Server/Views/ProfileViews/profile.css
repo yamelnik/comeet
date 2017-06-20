@@ -1,0 +1,105 @@
+body {
+/*    background: url("https://images.unsplash.com/photo-1493689485253-f07fcbfc731b?dpr=1.5&auto=format&fit=crop&w=1500&h=1024&q=80&cs=tinysrgb&crop=&bg=");
+*/    background-size: cover;
+    background-position: center; 
+    padding-top: 70px;
+    background-color: rgba(236, 240, 241, 0.37);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.cover {
+    background-image: url("./rawpixel-com-250087.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 350px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    min-height: 150px;
+}
+
+#profile_photo {
+    border-radius: 50%;
+    width: 190px;
+    height: auto;
+    position: absolute;
+    top: 250px;
+    border: 3px solid white;
+}
+
+.TopTitle{
+    background-position: center;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+    padding-top: 5em;
+}
+
+.Experience {
+    position: absolute;
+    margin-top: 10%;
+    background-color: rgba(231,231,228,0.5);
+    background-position: center;
+    text-align: left;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+    padding-top: 5px; 
+
+}
+}
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.navbar-fixed-top {
+    background-color: #0077b5;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+    color: white;   
+}
+
+ .navbar-default .navbar-toggle .icon-bar{
+    background-color: white;
+ }
+
+/*#profile_photo:hover {
+    width: 65%;
+    height: auto;
+    */
+}
+/*
+.row {
+    border: 1px solid yellow;
+}
+
+.col-lg-2, .col-lg-8 {
+    border: 1px solid red;*/
+}
+

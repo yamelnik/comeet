@@ -14,7 +14,7 @@ namespace Server.Controllers
         // GET: Views
         public ActionResult Index()
         {
-            return View(); 
+            return Redirect("/ProfileViews/Index");
         }
     }
 }
