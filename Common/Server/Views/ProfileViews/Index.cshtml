@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CoMeet - My Profile</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  
+    <link rel="stylesheet" type="text/css" href=".\profile.css">
+    <script type="text/javascript" src=".\Profile-page.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">CoMeet</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href=".\home-page.html">Home</a></li>
+                        <li><a href=".\About.html">About</a></li>
+                        <li class="active"><a href=".\home-page.html">My Profile</a></li>
+                        <li><a href="#contact">Network</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                        </li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">Login<i class="fa fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- topTitle -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-8">
+                <div class='hero'>
+                    <div class='cover'></div>
+                    <div class='profile'>
+                        <img id="profile_photo" src="C:\Users\tomer\Desktop\1.jpg">
+                        <div class="TopTitle">
+                            <h1 id="name">Name</h1>
+                            <h2 id="pos_org">
+                                <span id="Position">Position</span> <span id=""> at</span> <span id="Organization">Organization</span>
+                            </h2>
+                            <h3 id="edu_loc">
+                                <span id="Education">Education</span> <span id="saperator"> | </span><span id="Location">
+                                    Location
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <!-- phones -->
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">Phones</h4>
+                        <p class="list-group-item-text">voip 1234</p><p class="list-group-item-text">03-12345678</p>
+
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">Connections</h4>
+                        <p class="list-group-item-text"></p><a href="#"></a>Send Mail</p>
+                        <p class="list-group-item-text"><a href="#"></a>Send Lync</p>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Profile Pic -->
+</body>
+</html>

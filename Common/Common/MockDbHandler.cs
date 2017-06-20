@@ -112,6 +112,11 @@ namespace Tester
             };
         }
 
+        public Tag GetTag(string category, string value)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Tag> GetTagsByUser(Guid userId)
         {
             return new List<Tag>

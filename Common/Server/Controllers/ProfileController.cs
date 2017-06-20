@@ -5,10 +5,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using System.Web.Mvc;
 using System.Web.UI.WebControls;
 
 namespace Api.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProfileController : ApiController
     {
         private IDbHandler DbHandler;
@@ -28,7 +31,7 @@ namespace Api.Controllers
             DbHandler.AddNewUser(user);
         }
 
-        [HttpPut]
+        [System.Web.Http.HttpPut]
         public void AddTag([FromBody]Guid userGuid, [FromBody]Tag tag)
         {
             DbHandler.AddTagToUser(userGuid, tag);
