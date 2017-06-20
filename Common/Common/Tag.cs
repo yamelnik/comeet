@@ -5,6 +5,11 @@ namespace Common
 {
     public class Tag
     {
+		public Tag()
+		{
+			Id = Guid.NewGuid();
+		}
+	
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.String)]
         public Guid Id;
