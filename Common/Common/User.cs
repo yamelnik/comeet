@@ -6,6 +6,11 @@ namespace Common
 {
     public class User
     {
+		public User()
+		{
+			Id = Guid.NewGuid();
+		}
+	
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.String)]
         public Guid Id;
@@ -34,6 +39,9 @@ namespace Common
         [BsonElement("description")]
         public string Description;
 
+		[BsonElement("profilePictureUrl")]
+        public string ProfilePictureUrl;
+		
         [BsonElement("tags")]
         public List<Tag> Tags;
     }
