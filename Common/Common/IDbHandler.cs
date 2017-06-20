@@ -20,7 +20,7 @@ namespace Common
 
         IEnumerable<User> GetAllUsers();
 
-        Tag GetTag(string tagText);
+        Tag GetTag(string category, string value);
 
         IEnumerable<Tag> GetAllTagsInCategory(string categoryName);
 

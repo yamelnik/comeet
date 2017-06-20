@@ -9,7 +9,7 @@ namespace Common
         private static readonly string ConnectionString = @"mongodb://teamd9mongodb:pfps2B8gq5UnVPzV1ssVPmjVBqL7WNE0IRNqviBqT9CYcNU640qHyA9WkBZ8SMdJsHNEdW4ZNRkummsefCV2Dw==@teamd9mongodb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
         private readonly IMongoCollection<User> UsersCollection;
         private readonly IMongoCollection<Tag> TagsCollection;
-        
+
         public MongoDbHandler()
         {
             var client = new MongoClient(ConnectionString);
@@ -20,7 +20,7 @@ namespace Common
 
         public void AddNewTag(Tag newTag)
         {
-            throw new NotImplementedException();
+            TagsCollection.InsertOne(newTag);
         }
 
         public void AddNewUser(User newUser)
@@ -30,7 +30,18 @@ namespace Common
 
         public void AddTagToUser(Guid userId, Tag newTag)
         {
-            throw new NotImplementedException();
+            var existingTag = GetTag(newTag.Category, newTag.Value);
+            if (existingTag != null)
+            {
+                newTag.Id = existingTag.Id;
+            }
+            else
+            {
+                AddNewTag(newTag);
+            }
+            var filterDefinition = Builders<User>.Filter.Eq(user => user.Id, userId);
+            var updateDefinition = Builders<User>.Update.AddToSet(user => user.Tags, newTag);
+            UsersCollection.UpdateOne(filterDefinition, updateDefinition);
         }
 
         public IEnumerable<Tag> GetAllTags()
@@ -40,7 +51,8 @@ namespace Common
 
         public IEnumerable<Tag> GetAllTagsInCategory(string categoryName)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<Tag>.Filter.Eq(tag => tag.Category, categoryName);
+            return TagsCollection.Find(filterDefinition).ToList();
         }
 
         public IEnumerable<User> GetAllUsers()
@@ -48,19 +60,26 @@ namespace Common
             throw new NotImplementedException();
         }
 
-        public Tag GetTag(string tagText)
+        public Tag GetTag(string category, string value)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<Tag>.Filter
+                .Where(tag => tag.Category == category && tag.Value == value);
+            return TagsCollection.Find(filterDefinition).FirstOrDefault();
         }
 
         public IEnumerable<Tag> GetTagsByUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<User>.Filter
+                .Eq(user => user.Id, userId);
+            var projectionDefition = Builders<User>.Projection.Include(user => user.Tags);
+            return UsersCollection.Find(filterDefinition).FirstOrDefault().Tags;
         }
 
         public User GetUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var filterDefinition = Builders<User>.Filter
+                .Eq(user => user.Id, userId);
+            return UsersCollection.Find(filterDefinition).FirstOrDefault();
         }
 
         public IEnumerable<User> GetUsersByString(string str)
