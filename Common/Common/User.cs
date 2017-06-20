@@ -31,6 +31,9 @@ namespace Common
         [BsonElement("phoneNumber")]
         public string PhoneNumber;
 
+        [BsonElement("description")]
+        public string Description;
+
         [BsonElement("tags")]
         public List<Tag> Tags;
     }
